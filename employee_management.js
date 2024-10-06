@@ -32,7 +32,7 @@ class Department {
         return totalSalary;
     };
 
- // Task 4: Calculate total salary including bonuses using a for loop
+// Task 4: Calculate total salary including bonuses using a for loop
 
     calculateTotalSalaryWithBonus() {
         let total = 0;
@@ -40,5 +40,22 @@ class Department {
             total += this.employees[i].getTotalSalary();
         }
         return total;
+    };
+};
+
+// Task 3. Create a Manager Class that Inherits from Employee
+
+class Manager {
+    constructor(employee, bonus) {
+        this.employee = employee;
+        this.bonus = bonus;
+    };
+
+    getDetails() {
+        return `${this.employee.getDetails()} and has bonus of $${this.bonus}`;
+    };
+
+    getTotalSalary() {
+        return this.employee.salary + this.bonus; // salary + bonus
     };
 };
